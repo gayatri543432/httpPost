@@ -1,0 +1,42 @@
+
+<div class="card">
+    <div class="card-body">
+        <form #postForm="ngForm" (ngSubmit)="onSubmit()">
+            <h2 class="text-center">{{isInEditMode?'Update Post':'Add Post'}}</h2>
+            <div class="form-group">
+                <label for="title">Title*</label>
+                <input type="text" name="title" ngModel class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="body">Body*</label>
+                <textarea rows="4" class="form-control" ngModel name="body" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="userId">User Id*</label>
+                <select name="userId" class="form-control" ngModel required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+
+            <button
+            type="submit"
+            class="btn-block"
+            *ngIf="!isInEditMode" mat-raised-button color="primary">Add Post</button>
+            <button *ngIf="isInEditMode" 
+            (click)="onUpdate()"
+            class="btn-block"
+            
+            type="button" mat-raised-button color="accent">Update Post</button>
+
+        </form>
+    </div>
+</div>

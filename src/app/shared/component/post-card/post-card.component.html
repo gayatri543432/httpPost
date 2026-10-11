@@ -1,0 +1,14 @@
+
+
+<div class="card h-100">
+    <div class="card-header">
+        <h3>{{postObj.title}}</h3>
+    </div>
+    <div class="card-body">
+        <p>{{postObj.body}}</p>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        <button (click)="onEdit(postObj)" mat-raised-button color="primary">Edit</button>
+        <button (click)="onRemove(postObj.id)" mat-raised-button color="warn">Remove</button>
+    </div>
+</div>
